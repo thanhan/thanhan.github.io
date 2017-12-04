@@ -1,0 +1,462 @@
+<html><head><title>HIT</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="example_data/externalHIT_v1.js"></script></head><body><form name="mturk_form" method="post" id="mturk_form" action="https://www.mturk.com/mturk/externalSubmit"><input value="" name="assignmentId" id="assignmentId" type="hidden"><link href="example_data/bootstrap.css" rel="stylesheet">
+<section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+<div class="row col-xs-12 col-md-12"><!-- Instructions -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Instructions</strong></div>
+
+<div class="panel-body">
+<p><strong>Background:</strong></p>
+
+<p>We had a task where workers looked at some text and find words that 
+are parts of proper nouns such as people name, organization names and 
+places.</p>
+
+<p>Now we want to know whether you can predict if a worker miss a word, after looking at labels by that worker.</p>
+
+<p><strong>Worker summary:</strong></p>
+
+<p>You will first look at a summary of the labels by a particular 
+worker. You will see the sentences and the proper nouns in bold and 
+whether the worker the worker miss each proper noun. For example:</p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+			<div>It’s official: Obama attending <b>APEC</b> Summit in Manila</div>
+			</td>
+			<td><strong>YES</strong></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Where APEC is an organization name and should be marked but the 
+worker missed that. The sentences by that workers are organized given in
+ <strong>Tables</strong> . Each table includes sentences that are similar. For example:</p>
+
+<p><strong>Table 1</strong></p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+			<div>It’s official: Obama attending <b>APEC</b> Summit in Manila</div>
+			</td>
+			<td><strong>YES</strong></td>
+		</tr>
+		<tr>
+			<td>
+			<div>The time is 05:30 <b>GMT</b></div>
+			</td>
+			<td><strong>YES</strong></td>
+		</tr>
+		<tr>
+			<td>
+			<div><b>BME</b> repeated in its latest review rumours of involvement by Sumitomo Corp&nbsp;</div>
+			</td>
+			<td><strong>YES</strong></td>
+		</tr>
+		<tr>
+			<td>50 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Majority features:&nbsp;All characters are uppercases;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>In this table, you see three examples of sentences and the words that
+ the worker missed. You also see that the table has 50 more rows (which 
+are not shown). Lastly, you see the Majority feature: all characters are
+ uppercases, meaning that the majority of sentences in this table have 
+the bold word with that feature. This suggests that the worker here is 
+not good at labeling all-uppercase words.</p>
+
+<p><strong>Task:</strong></p>
+
+<p>You will then answer some question. Each question contains two words;
+ worker gave the correct labels for one of those and the wrong label for
+ the other. Your task is to guess which word did the worker miss. For 
+examples:</p>
+
+<p>1.&nbsp; <strong>New York</strong>&nbsp; Metropolitan Opera suspends conductor James Levine</p>
+
+<p>2.&nbsp; One dead after hit-and-run driver strikes six in Queens, <strong>NY</strong></p>
+
+<p>If you believe the worker is not good at all-uppercase words, you should select 2.</p>
+
+<p><strong>Hint:</strong></p>
+
+<p>Try to find what types of words in what types of sentences that the worker missed and did not miss.</p>
+
+<p>If you have absolutely no clue, you can select the option "Can't tell"</p>
+</div>
+</div>
+</div>
+</section>
+
+<div class="well" style="text-align: center;"><strong>Summary of worker number 20</strong></div>
+
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<p>&nbsp;</p>
+
+<section><strong>Table 1</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Interfax made clear that the interior <b>ministry</b> detachment had been sent on the mission before the truce deal had been signed at the local equivalent of 1500 GMT .</td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td>The right-handed batsman will have to forfeit half the money he 
+was due to earn from the tour , the news agency said after a 
+disciplinary committee set up by the Board of Control <b>for</b> Cricket in India met at Mohali , near the northern city of Chandigarh . </td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td>An outbreak of cholera has killed 21 people in a week at Ubimini in oil-rich southern Nigeria , the News Agency <b>of</b> Nigeria reported on Saturday . </td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td>Police initially said leftist Revolutionary Armed Forces <b>of</b> Colombia ( FARC ) rebels were prime suspects in the killings .</td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td colspan="2">4 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: IsAlnum=True; IsAlpha=True; IsDigit=False; ContainPunc=False; IsUpper=False; IsCap=False; POS=ADP;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<section><strong>Table 2</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>-- Dimitris Kontogiannis , Athens <b>Newsroom</b> +301 3311812-4 </td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td>He will not be considered for a test match against Australia starting on October 10 in New Delhi , the <b>United</b> News of India said . </td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td>Niugini <b>Mining</b> Ltd said on Thursday that Battle Mountain had initiated talks about acquiring the shares in Niugini it does not already own .</td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td>He will not be considered for a test match against Australia starting on October 10 in New Delhi , the United <b>News</b> of India said . </td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td colspan="2">54 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: IsCap=True; IsAlnum=True; IsAlpha=True; IsDigit=False; ContainPunc=False; POS=NOUN; IsUpper=False;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<section><b>Table</b><strong> 3</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Shares in gold miner Niugini Mining Ltd surged 38 cents to <b>A$</b>
+ 3.75 early on Friday following confirmation on Thursday from Battle 
+Mountain Gold that it was considering acquiring the 49.6 percent of 
+Niugini it did not already own .</td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td>By 11.25 a.m. ( 0025 GMT ) , Niugini Mining shares were at <b>A$</b> 3.65 , up 28 cents on turnover of 108,288 shares . </td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td colspan="2">0 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: </td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</section>
+</section>
+</section>
+</div>
+
+<div class="col-md-6">&nbsp;
+<section><strong>Table 4</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Scores : England 326 ; <b>Pakistan</b> 473-6 .</td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>Johnson is the second manager to be hospitalized this week after <b>California</b>
+ Angels skipper John McNamara was admitted to New York 's Columbia 
+Presbyterian Hospital on Wednesday with a blood clot in his left calf .</td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>Ischinger said he met three Russian deputy foreign ministers and a
+ vice defence minister , who confirmed Russian Foreign Minister Yevgeny 
+Primakov 's pledge that Moscow would seek a political solution under the
+ aegis of the Organisation for Security and <b>Cooperation</b> in Europe ( OSCE ) . </td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>Conte seized power in 1984 after the death of veteran Marxist leader <b>Ahmed</b> Sekou Toure .</td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td colspan="2">713 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: IsCap=True; IsAlnum=True; IsAlpha=True; IsDigit=False; ContainPunc=False; POS=NOUN; IsUpper=False;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<section><b>Table </b><strong>5</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>A <b>U.S.</b> fighter plane blew a tyre and caught fire while 
+landing on Sunday at Israel 's Ben Gurion airport , an airport spokesman
+ said . </td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>Scores : World XI 102-0 ( <b>M.</b> Waugh 39 not out , S. Tendulkar 56 not out ) off 21.4 overs v Sri Lanka . </td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>Score : England 326 ( <b>J.</b> Crawley 106 , G. Thorpe 54 . </td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>that is to end the state of hostility , Thursday 's overseas edition of the People <b>'s</b> Daily quoted Tang as saying . </td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td colspan="2">18 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: IsUpper=True; IsCap=True; IsDigit=False; POS=NOUN; IsAlnum=False; IsAlpha=False; ContainPunc=True;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<section><strong>Table 6</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Saleh said the team -- from New York 's Metropolitan Museum -- 
+found four Canopic jars and two unguent jars in the tomb , which belongs
+ to an unidentifed person who lived during the 12th Dynasty ( 1991-1786 <b>BC</b> ) in the Middle Kingdom . </td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td><b>LISBON</b> 1996-08-25</td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td><b>NOVYE</b> ATAGI , Russia 1996-08-22 </td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>Police initially said leftist Revolutionary Armed Forces of Colombia ( <b>FARC</b> ) rebels were prime suspects in the killings .</td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td colspan="2">86 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: IsUpper=True; IsCap=True; IsAlnum=True; IsAlpha=True; IsDigit=False; ContainPunc=False; POS=NOUN;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</section>
+</section>
+</section>
+</div>
+</div>
+</div>
+
+<fieldset>&nbsp;</fieldset>
+
+<div class="well" style="text-align: center;"><strong>Questions:</strong></div>
+
+<div class="container">
+<fieldset>
+<p><label>Which of the following words did worker number 20 miss?</label></p>
+
+<div class="radio"><label><input name="q0" required="" value="0" type="radio"><b>St.</b> Gallen 9 4 4 1 6 5 16</label></div>
+
+<div class="radio"><label><input name="q0" required="" value="1" type="radio">An outbreak of cholera has killed 21 people in a week at Ubimini in oil-rich southern Nigeria , the News Agency <b>of</b> Nigeria reported on Saturday . </label></div>
+
+<div class="radio"><label><input name="q0" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 20 miss?</label>
+
+<div class="radio"><label><input name="q1" required="" value="0" type="radio">Scores : World XI 102-0 ( M. Waugh 39 not out , <b>S.</b> Tendulkar 56 not out ) off 21.4 overs v Sri Lanka . </label></div>
+
+<div class="radio"><label><input name="q1" required="" value="1" type="radio">He will not be considered for a test match against Australia starting on October 10 in New Delhi , the United News <b>of</b> India said . </label></div>
+
+<div class="radio"><label><input name="q1" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 20 miss?</label>
+
+<div class="radio"><label><input name="q2" required="" value="0" type="radio">The
+ right-handed batsman will have to forfeit half the money he was due to 
+earn from the tour , the news agency said after a disciplinary committee
+ set up by the Board of Control for Cricket <b>in</b> India met at Mohali , near the northern city of Chandigarh . </label></div>
+
+<div class="radio"><label><input name="q2" required="" value="1" type="radio">Scores : World XI 102-0 ( <b>M.</b> Waugh 39 not out , S. Tendulkar 56 not out ) off 21.4 overs v Sri Lanka . </label></div>
+
+<div class="radio"><label><input name="q2" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 20 miss?</label>
+
+<div class="radio"><label><input name="q3" required="" value="0" type="radio">The
+ right-handed batsman will have to forfeit half the money he was due to 
+earn from the tour , the news agency said after a disciplinary committee
+ set up by the Board of Control <b>for</b> Cricket in India met at Mohali , near the northern city of Chandigarh . </label></div>
+
+<div class="radio"><label><input name="q3" required="" value="1" type="radio">Score : England 326 ( J. Crawley 106 , <b>G.</b> Thorpe 54 . </label></div>
+
+<div class="radio"><label><input name="q3" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 20 miss?</label>
+
+<div class="radio"><label><input name="q4" required="" value="0" type="radio">Score : England 326 ( <b>J.</b> Crawley 106 , G. Thorpe 54 . </label></div>
+
+<div class="radio"><label><input name="q4" required="" value="1" type="radio">The
+ right-handed batsman will have to forfeit half the money he was due to 
+earn from the tour , the news agency said after a disciplinary committee
+ set up by the Board <b>of</b> Control for Cricket in India met at Mohali , near the northern city of Chandigarh . </label></div>
+
+<div class="radio"><label><input name="q4" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 20 miss?</label>
+
+<div class="radio"><label><input name="q5" required="" value="0" type="radio">But
+ as the highest-ranked non-seeded player in the tournament , Habsudova 
+will be moved into Rubin 's slot in the draw , while Davenport will now 
+get a qualifier in the first round , according to <b>U.S.</b> Tennis Association officials . </label></div>
+
+<div class="radio"><label><input name="q5" required="" value="1" type="radio">Police initially said leftist Revolutionary Armed Forces <b>of</b> Colombia ( FARC ) rebels were prime suspects in the killings .</label></div>
+
+<div class="radio"><label><input name="q5" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 20 miss?</label>
+
+<div class="radio"><label><input name="q6" required="" value="0" type="radio">Prime Minister <b>H.D.</b>
+ Deve Gowda 's centre-left government hopes the elections will help 
+restore normality and democratic rule in Jammu and Kashmir , where more 
+than 20,000 people have died in insurgency-related violence since 1990 .
+ </label></div>
+
+<div class="radio"><label><input name="q6" required="" value="1" type="radio">Interfax made clear that the interior <b>ministry</b> detachment had been sent on the mission before the truce deal had been signed at the local equivalent of 1500 GMT .</label></div>
+
+<div class="radio"><label><input name="q6" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 20 miss?</label>
+
+<div class="radio"><label><input name="q7" required="" value="0" type="radio">BASEBALL - RESULTS OF <b>S.</b> KOREAN PRO-BASEBALL GAMES .</label></div>
+
+<div class="radio"><label><input name="q7" required="" value="1" type="radio">Interfax made clear that the <b>interior</b> ministry detachment had been sent on the mission before the truce deal had been signed at the local equivalent of 1500 GMT .</label></div>
+
+<div class="radio"><label><input name="q7" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+</div>
+<style type="text/css">fieldset { padding: 10px; background:#fbfbfb; border-radius:5px; margin-bottom:5px; }
+</style>
+<p class="text-center"><input id="submitButton" class="btn btn-primary" value="Submit" type="submit"></p></form><script language="Javascript">turkSetAssignmentID();</script></body></html>

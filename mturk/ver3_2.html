@@ -1,0 +1,432 @@
+<html><head><title>HIT</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="example_data/externalHIT_v1.js"></script></head><body><form name="mturk_form" method="post" id="mturk_form" action="https://www.mturk.com/mturk/externalSubmit"><input value="" name="assignmentId" id="assignmentId" type="hidden"><link href="example_data/bootstrap.css" rel="stylesheet">
+<section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+<div class="row col-xs-12 col-md-12"><!-- Instructions -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Instructions</strong></div>
+
+<div class="panel-body">
+<p><strong>Background:</strong></p>
+
+<p>We had a task where workers looked at some text and find words that 
+are parts of proper nouns such as people name, organization names and 
+places.</p>
+
+<p>Now we want to know whether you can predict if a worker miss a word, after looking at labels by that worker.</p>
+
+<p><strong>Worker summary:</strong></p>
+
+<p>You will first look at a summary of the labels by a particular 
+worker. You will see the sentences and the proper nouns in bold and 
+whether the worker the worker miss each proper noun. For example:</p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+			<div>It’s official: Obama attending <b>APEC</b> Summit in Manila</div>
+			</td>
+			<td><strong>YES</strong></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Where APEC is an organization name and should be marked but the 
+worker missed that. The sentences by that workers are organized given in
+ <strong>Tables</strong> . Each table includes sentences that are similar. For example:</p>
+
+<p><strong>Table 1</strong></p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+			<div>It’s official: Obama attending <b>APEC</b> Summit in Manila</div>
+			</td>
+			<td><strong>YES</strong></td>
+		</tr>
+		<tr>
+			<td>
+			<div>The time is 05:30 <b>GMT</b></div>
+			</td>
+			<td><strong>YES</strong></td>
+		</tr>
+		<tr>
+			<td>
+			<div><b>BME</b> repeated in its latest review rumours of involvement by Sumitomo Corp&nbsp;</div>
+			</td>
+			<td><strong>YES</strong></td>
+		</tr>
+		<tr>
+			<td>50 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Majority features:&nbsp;All characters are uppercases;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>In this table, you see three examples of sentences and the words that
+ the worker missed. You also see that the table has 50 more rows (which 
+are not shown). Lastly, you see the Majority feature: all characters are
+ uppercases, meaning that the majority of sentences in this table have 
+the bold word with that feature. This suggests that the worker here is 
+not good at labeling all-uppercase words.</p>
+
+<p><strong>Task:</strong></p>
+
+<p>You will then answer some question. Each question contains two words;
+ worker gave the correct labels for one of those and the wrong label for
+ the other. Your task is to guess which word did the worker miss. For 
+examples:</p>
+
+<p>1.&nbsp; <strong>New York</strong>&nbsp; Metropolitan Opera suspends conductor James Levine</p>
+
+<p>2.&nbsp; One dead after hit-and-run driver strikes six in Queens, <strong>NY</strong></p>
+
+<p>If you believe the worker is not good at all-uppercase words, you should select 2.</p>
+
+<p><strong>Hint:</strong></p>
+
+<p>Try to find what types of words in what types of sentences that the worker missed and did not miss.</p>
+
+<p>If you have absolutely no clue, you can select the option "Can't tell"</p>
+</div>
+</div>
+</div>
+</section>
+
+<div class="well" style="text-align: center;"><strong>Summary of worker number 25</strong></div>
+
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<p>&nbsp;</p>
+
+<section><strong>Table 1</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>( Sweden ) , Marcus Wills , Pedro Linhart ( Spain ) , <b>Jamie</b> </td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td>Alpha Technologies Group Inc said it had closed on its agreement to acquire Lockhart <b>Industries</b> Inc .</td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td><b>Chalmers</b> ( Australia ) , Miguel Angel Martin ( Spain ) , </td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td><b>Waldbaum</b> Hamlet Cup tennis tournament on Saturday ( prefix</td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td colspan="2">186 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: IsCap=True; IsAlnum=True; IsAlpha=True; IsDigit=False; ContainPunc=False; POS=NOUN; IsUpper=False;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<section><strong>Table 2</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Cup Winners ' Cup <b>x-Cercle</b> Brugge ( Belgium ) v Brann Bergen ( Norway )</td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td>The NBH is BBB-minus by Duff &amp; Phelps , IBCA and Thomson BankWatch , BB-plus by S&amp;P , BA1 by Moody <b>'s</b> Investors Service , BBB+ by the Japan Credit Rating Agency . </td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td>Agents of the F.B.I. and the Bureau of Alcohol <b>,</b> Tobacco and Firearms were also at the scene , Jordan said . </td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td>I 'm surprised anyone could even find us out here , said Fannie Johnson , a member of <b>St.</b> Matthew 's , who said she believed arson was to blame . </td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td colspan="2">13 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: IsCap=True; IsDigit=False; IsUpper=False; IsAlnum=False; IsAlpha=False; ContainPunc=True; POS=.;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<section><b>Table</b><strong> 3</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><b>BRUSSELS</b> 1996-08-25</td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td><b>EASTERN</b> DIVISION</td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td>NOTE - Full name of the state-owned German railway company is Deutsche Bahn <b>AG</b> .</td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td>GOLF - GERMAN <b>OPEN</b> FIRST ROUND SCORES .</td>
+			<td>YES</td>
+		</tr>
+		<tr>
+			<td colspan="2">22 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: IsUpper=True; IsCap=True; IsAlnum=True; IsAlpha=True; IsDigit=False; ContainPunc=False; POS=NOUN;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</section>
+</section>
+</section>
+</div>
+
+<div class="col-md-6">&nbsp;
+<section><strong>Table 4</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Carlos Moya ( Spain ) vs. Scott Humphries ( <b>U.S.</b> )</td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>Admira <b>/</b> Wacker 0 Sturm Graz 3</td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>At Northampton : Sussex 368-7 ( <b>N.</b> Lenham 145 , V. Drakes 59 not </td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>66 , <b>M.</b> Vaughan 57 ) v Lancashire . </td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td colspan="2">78 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: IsUpper=True; IsCap=True; IsDigit=False; POS=NOUN; IsAlnum=False; IsAlpha=False; ContainPunc=True;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<section><b>Table </b><strong>5</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>4 - Kimiko Date ( <b>Japan</b> ) beat 2 - Conchita Martinez ( Spain ) 6-2 7-5 .</td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>- Blaming Iraq for riots in <b>Jordan</b> is a dirty game .</td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>Lada <b>Togliatti</b> 1 Spartak Moscow 1</td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>-- <b>Budapest</b> newsroom ( 36 1)266 2410</td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td colspan="2">1830 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: IsCap=True; IsAlnum=True; IsAlpha=True; IsDigit=False; ContainPunc=False; POS=NOUN; IsUpper=False;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<section><strong>Table 6</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>TENNIS - RESULTS AT <b>HAMLET</b> CUP .</td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td><b>DUBAI</b> 1996-08-22</td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>The <b>NBH</b> trade data is based on cash flow , MIT data on customs statistics . </td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td>WESTERN <b>DIVISION</b></td>
+			<td>NO</td>
+		</tr>
+		<tr>
+			<td colspan="2">228 more rows in this table</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: IsUpper=True; IsCap=True; IsAlnum=True; IsAlpha=True; IsDigit=False; ContainPunc=False; POS=NOUN;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</section>
+</section>
+</section>
+</div>
+</div>
+</div>
+
+<fieldset>&nbsp;</fieldset>
+
+<div class="well" style="text-align: center;"><strong>Questions:</strong></div>
+
+<div class="container">
+<fieldset>
+<p><label>Which of the following words did worker number 25 miss?</label></p>
+
+<div class="radio"><label><input name="q0" required="" value="0" type="radio">5. <b>Heinz-Harald</b> Frentzen ( Germany ) 1:54.984</label></div>
+
+<div class="radio"><label><input name="q0" required="" value="1" type="radio">The other two teams in the group are last season 's Cup Winners <b>'</b> Cup runners-up Rapid Vienna and Fenerbahce of Turkey .</label></div>
+
+<div class="radio"><label><input name="q0" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 25 miss?</label>
+
+<div class="radio"><label><input name="q1" required="" value="0" type="radio">CARLSBAD , <b>Calif.</b> 1996-08-24 </label></div>
+
+<div class="radio"><label><input name="q1" required="" value="1" type="radio">Agents of the F.B.I. and the Bureau of Alcohol <b>,</b> Tobacco and Firearms were also at the scene , Jordan said . </label></div>
+
+<div class="radio"><label><input name="q1" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 25 miss?</label>
+
+<div class="radio"><label><input name="q2" required="" value="0" type="radio">Cup Winners <b>'</b> Cup x-Cercle Brugge ( Belgium ) v Brann Bergen ( Norway )</label></div>
+
+<div class="radio"><label><input name="q2" required="" value="1" type="radio">202 Greg Turner ( New Zealand ) 70 67 65 , <b>Heinz-Peter</b> Thul </label></div>
+
+<div class="radio"><label><input name="q2" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 25 miss?</label>
+
+<div class="radio"><label><input name="q3" required="" value="0" type="radio">Instead on Friday he nominated all 23 Euro <b>'</b> 96 veterans including Bremen 's Jens Todt , called up before the final by special UEFA dispensation . </label></div>
+
+<div class="radio"><label><input name="q3" required="" value="1" type="radio">Gary Orr , <b>Jose-Maria</b> Canizares ( Spain ) , Michael Jonzon </label></div>
+
+<div class="radio"><label><input name="q3" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 25 miss?</label>
+
+<div class="radio"><label><input name="q4" required="" value="0" type="radio">To bat : <b>Inzamam-ul-Haq</b> , Salim Malik , Asif Mujtaba , Wasim </label></div>
+
+<div class="radio"><label><input name="q4" required="" value="1" type="radio">The NBH is BBB-minus by Duff &amp; Phelps , IBCA and Thomson BankWatch , BB-plus by S&amp;P , BA1 by Moody <b>'s</b> Investors Service , BBB+ by the Japan Credit Rating Agency . </label></div>
+
+<div class="radio"><label><input name="q4" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 25 miss?</label>
+
+<div class="radio"><label><input name="q5" required="" value="0" type="radio">Alex <b>O'Brien</b> ( U.S. ) beat Byron Black ( Zimbabwe ) 7-6 ( 7-2 ) 6-2</label></div>
+
+<div class="radio"><label><input name="q5" required="" value="1" type="radio">I 'm surprised anyone could even find us out here , said Fannie Johnson , a member of St. Matthew <b>'s</b> , who said she believed arson was to blame . </label></div>
+
+<div class="radio"><label><input name="q5" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 25 miss?</label>
+
+<div class="radio"><label><input name="q6" required="" value="0" type="radio">Nicolas Lapentti ( Ecuador ) vs. Alex <b>O'Brien</b> ( U.S. )</label></div>
+
+<div class="radio"><label><input name="q6" required="" value="1" type="radio">Portsmouth 1 Queen <b>'s</b> Park Rangers 2</label></div>
+
+<div class="radio"><label><input name="q6" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+
+<fieldset><label>Which of the following words did worker number 25 miss?</label>
+
+<div class="radio"><label><input name="q7" required="" value="0" type="radio">Jan Siemerink ( Netherlands ) vs. <b>Carl-Uwe</b> Steeb ( Germany )</label></div>
+
+<div class="radio"><label><input name="q7" required="" value="1" type="radio">By 11.25 a.m. ( 0025 GMT ) , Niugini Mining shares were at <b>A$</b> 3.65 , up 28 cents on turnover of 108,288 shares . </label></div>
+
+<div class="radio"><label><input name="q7" required="" value="2" type="radio">Can't tell.</label></div>
+</fieldset>
+</div>
+<style type="text/css">fieldset { padding: 10px; background:#fbfbfb; border-radius:5px; margin-bottom:5px; }
+</style>
+<p class="text-center"><input id="submitButton" class="btn btn-primary" value="Submit" type="submit"></p></form><script language="Javascript">turkSetAssignmentID();</script></body></html>
