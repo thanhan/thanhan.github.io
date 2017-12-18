@@ -1,0 +1,443 @@
+<html><head><title>HIT</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="preview_data/externalHIT_v1.js"></script></head><body><form name="mturk_form" method="post" id="mturk_form" action="https://www.mturk.com/mturk/externalSubmit"><input value="" name="assignmentId" id="assignmentId" type="hidden"><link href="preview_data/bootstrap.css" rel="stylesheet">
+<section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+<div class="row col-xs-12 col-md-12"><!-- Instructions -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Instructions</strong></div>
+
+<div class="panel-body">
+<p><strong>Important:&nbsp;</strong> Look at the last digit of you 
+worker ID. For example, if your worker ID is&nbsp;ASA8XEGP03TF then the 
+last digit is 3, after ignoring the letters.</p>
+
+<p>If your last digit if one of 1, 3, 5, 7, 9 then you can work on this 
+task. If not then you can not work on this task, but you can work on our
+ task called "Guess workers mistakes (EVEN)"</p>
+
+<p><strong>Background:</strong></p>
+
+<p>We had a task where workers looked at some text and find words that 
+are parts of proper nouns such as people name, organization names and 
+places.</p>
+
+<p>Now we want to know whether you can predict if a worker miss a word, after looking at labels by that worker.</p>
+
+<p><strong>Worker summary:</strong></p>
+
+<p>You will first look at a summary of the labels by a particular 
+worker. You will see the sentences and the proper nouns in bold and 
+whether the worker the worker miss each proper noun. For example:</p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+			<div>It’s official: Obama attending <b>APEC</b> Summit in Manila</div>
+			</td>
+			<td><strong>YES</strong></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Where APEC is an organization name and should be marked but the worker missed that. The sentences by that workers are given in <strong>Tables</strong> . Each table includes sentences that are similar. For example:</p>
+
+<p><strong>Table 1</strong></p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+			<div>It’s official: Obama attending <b>APEC</b> Summit in Manila</div>
+			</td>
+			<td><strong>YES</strong></td>
+		</tr>
+		<tr>
+			<td>
+			<div>The time is 05:30 <b>GMT</b></div>
+			</td>
+			<td><strong>YES</strong></td>
+		</tr>
+		<tr>
+			<td>
+			<div><b>BME</b> repeated in its latest review rumours of involvement by Sumitomo Corp&nbsp;</div>
+			</td>
+			<td><strong>YES</strong></td>
+		</tr>
+		<tr>
+			<td>This table has 50 rows (30%)</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Majority features:&nbsp;All characters are uppercases;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>In this table, you see three examples of sentences and the words that
+ the worker missed. You also see that the table has 50 rows (3 are 
+shown, 47 are not shown). These 50 rows correspond to 30% of the words 
+that the worker missed. Lastly, you see the Majority feature: all 
+characters are uppercases, meaning that the majority of sentences in 
+this table have the bold word with that feature. This suggests that the 
+worker here is not good at labeling all-uppercase words.</p>
+
+<p><strong>Notes:</strong></p>
+
+<p>A few tables are empty (you can ignore those). Some Majority features are also empty.</p>
+
+<p><strong>Task:</strong></p>
+
+<p>You will then answer some question. Each question contains two words;
+ worker gave the correct labels for one of those and the wrong label for
+ the other. Your task is to guess which word did the worker miss. For 
+examples:</p>
+
+<p>1.&nbsp; <strong>New York</strong>&nbsp; Metropolitan Opera suspends conductor James Levine</p>
+
+<p>2.&nbsp; One dead after hit-and-run driver strikes six in Queens, <strong>NY</strong></p>
+
+<p>To help us understand your answer, please select an explantion (or write your own explanation).</p>
+
+<p>For example, if you believe the worker is not good at all-uppercase 
+words, you should select 2 and select the explanation "worker bad at all
+ uppercase (acronym)". In contrast, if you believe the worker is good at
+ all-uppercase words, you should select 1 and select the explanation 
+"worker good at all uppercase (acronym)"</p>
+
+<p>If you have absolutely no clue, you can select the option "Can't 
+tell" and select the explanation "Cant' tell". But if you have any clue,
+ you should not select this.</p>
+
+<p><strong>Hint:</strong></p>
+
+<p>Try to find what types of words and what types of sentences that the worker good at and bad at.</p>
+
+<p>Look at the number of rows and the percentages.</p>
+</div>
+</div>
+</div>
+</section>
+
+<div class="well" style="text-align: center;"><strong>Summary of worker number ${worker}</strong></div>
+
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<p>&nbsp;</p>
+
+<section><strong>Table 1</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>${word000}</td>
+			<td>${miss000}</td>
+		</tr>
+		<tr>
+			<td>${word001}</td>
+			<td>${miss001}</td>
+		</tr>
+		<tr>
+			<td>${word002}</td>
+			<td>${miss002}</td>
+		</tr>
+		<tr>
+			<td>${word003}</td>
+			<td>${miss003}</td>
+		</tr>
+		<tr>
+			<td colspan="2">${more00}</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: ${feats00}</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<section><strong>Table 2</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>${word010}</td>
+			<td>${miss010}</td>
+		</tr>
+		<tr>
+			<td>${word011}</td>
+			<td>${miss011}</td>
+		</tr>
+		<tr>
+			<td>${word012}</td>
+			<td>${miss012}</td>
+		</tr>
+		<tr>
+			<td>${word013}</td>
+			<td>${miss013}</td>
+		</tr>
+		<tr>
+			<td colspan="2">${more01}</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: ${feats01}</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<section><b>Table</b><strong> 3</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>${word020}</td>
+			<td>${miss020}</td>
+		</tr>
+		<tr>
+			<td>${word021}</td>
+			<td>${miss021}</td>
+		</tr>
+		<tr>
+			<td>${word022}</td>
+			<td>${miss022}</td>
+		</tr>
+		<tr>
+			<td>${word023}</td>
+			<td>${miss023}</td>
+		</tr>
+		<tr>
+			<td colspan="2">${more02}</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: ${feats02}</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</section>
+</section>
+</section>
+</div>
+
+<div class="col-md-6">&nbsp;
+<section><strong>Table 4</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>${word100}</td>
+			<td>${miss100}</td>
+		</tr>
+		<tr>
+			<td>${word101}</td>
+			<td>${miss101}</td>
+		</tr>
+		<tr>
+			<td>${word102}</td>
+			<td>${miss102}</td>
+		</tr>
+		<tr>
+			<td>${word103}</td>
+			<td>${miss103}</td>
+		</tr>
+		<tr>
+			<td colspan="2">${more10}</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: ${feats10}</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<section><b>Table </b><strong>5</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>${word110}</td>
+			<td>${miss110}</td>
+		</tr>
+		<tr>
+			<td>${word111}</td>
+			<td>${miss111}</td>
+		</tr>
+		<tr>
+			<td>${word112}</td>
+			<td>${miss112}</td>
+		</tr>
+		<tr>
+			<td>${word113}</td>
+			<td>${miss113}</td>
+		</tr>
+		<tr>
+			<td colspan="2">${more11}</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: ${feats11}</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<section><strong>Table 6</strong>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Word</th>
+			<th>Miss</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>${word120}</td>
+			<td>${miss120}</td>
+		</tr>
+		<tr>
+			<td>${word121}</td>
+			<td>${miss121}</td>
+		</tr>
+		<tr>
+			<td>${word122}</td>
+			<td>${miss122}</td>
+		</tr>
+		<tr>
+			<td>${word123}</td>
+			<td>${miss123}</td>
+		</tr>
+		<tr>
+			<td colspan="2">${more12}</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">Majority features: ${feats12}</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</section>
+</section>
+</section>
+</div>
+</div>
+</div>
+
+<fieldset>&nbsp;</fieldset>
+
+<div class="well" style="text-align: center;"><strong>Questions:</strong></div>
+
+<div class="container">
+<fieldset>
+<p><label>Which of the following words did worker number ${worker} miss?</label></p>
+
+<div class="radio"><label><input name="q0" required="" value="0" type="radio">${w00}</label></div>
+
+<div class="radio"><label><input name="q0" required="" value="1" type="radio">${w01}</label></div>
+
+<div class="radio"><label><input name="q0" required="" value="2" type="radio">Can't tell.</label></div>
+
+<p><strong>Explain (required):</strong></p>
+<select class="form-control" name="select0" required=""><option selected="selected" value="">- select one -</option><option value="good_long">Worker good at long sentences</option><option value="good_acro">Worker good at all-uppercase(acronym)</option><option value="good_number">Worker good at words that contain numbers</option><option value="good_punctuation">Worker good at words that contain punctuation</option><option value="bad_long">Worker bad at long sentences</option><option value="bad_acronym">Worker bad at all-uppercase(acronym)</option><option value="bad_number">Worker bad at words that contain numbers</option><option value="bad_punctuation">Worker bad at words that contain punctuations</option><option value="cant_tell">Can't tell</option><option value="others">Others (please write below)</option> </select><textarea class="form-control" cols="120" name="explain0" rows="1"></textarea></fieldset>
+
+<fieldset><label>Which of the following words did worker number ${worker} miss?</label>
+
+<div class="radio"><label><input name="q1" required="" value="0" type="radio">${w10}</label></div>
+
+<div class="radio"><label><input name="q1" required="" value="1" type="radio">${w11}</label></div>
+
+<div class="radio"><label><input name="q1" required="" value="2" type="radio">Can't tell.</label></div>
+
+<p><strong>Explain (required):</strong></p>
+<select class="form-control" name="select1" required=""><option selected="selected" value="">- select one -</option><option value="good_long">Worker good at long sentences</option><option value="good_acro">Worker good at all-uppercase(acronym)</option><option value="good_number">Worker good at words that contain numbers</option><option value="good_punctuation">Worker good at words that contain punctuation</option><option value="bad_long">Worker bad at long sentences</option><option value="bad_acronym">Worker bad at all-uppercase(acronym)</option><option value="bad_number">Worker bad at words that contain numbers</option><option value="bad_punctuation">Worker bad at words that contain punctuations</option><option value="cant_tell">Can't tell</option><option value="others">Others (please write below)</option> </select><textarea class="form-control" cols="120" name="explain1" rows="1"></textarea></fieldset>
+
+<fieldset><label>Which of the following words did worker number ${worker} miss?</label>
+
+<div class="radio"><label><input name="q2" required="" value="0" type="radio">${w20}</label></div>
+
+<div class="radio"><label><input name="q2" required="" value="1" type="radio">${w21}</label></div>
+
+<div class="radio"><label><input name="q2" required="" value="2" type="radio">Can't tell.</label></div>
+
+<p><strong>Explain (required):</strong></p>
+<select class="form-control" name="select2" required=""><option selected="selected" value="">- select one -</option><option value="good_long">Worker good at long sentences</option><option value="good_acro">Worker good at all-uppercase(acronym)</option><option value="good_number">Worker good at words that contain numbers</option><option value="good_punctuation">Worker good at words that contain punctuation</option><option value="bad_long">Worker bad at long sentences</option><option value="bad_acronym">Worker bad at all-uppercase(acronym)</option><option value="bad_number">Worker bad at words that contain numbers</option><option value="bad_punctuation">Worker bad at words that contain punctuations</option><option value="cant_tell">Can't tell</option><option value="others">Others (please write below)</option> </select><textarea class="form-control" cols="120" name="explain2" rows="1"></textarea></fieldset>
+
+<fieldset><label>Which of the following words did worker number ${worker} miss?</label>
+
+<div class="radio"><label><input name="q3" required="" value="0" type="radio">${w30}</label></div>
+
+<div class="radio"><label><input name="q3" required="" value="1" type="radio">${w31}</label></div>
+
+<div class="radio"><label><input name="q3" required="" value="2" type="radio">Can't tell.</label></div>
+
+<p><strong>Explain (required):</strong></p>
+<select class="form-control" name="select3" required=""><option selected="selected" value="">- select one -</option><option value="good_long">Worker good at long sentences</option><option value="good_acro">Worker good at all-uppercase(acronym)</option><option value="good_number">Worker good at words that contain numbers</option><option value="good_punctuation">Worker good at words that contain punctuation</option><option value="bad_long">Worker bad at long sentences</option><option value="bad_acronym">Worker bad at all-uppercase(acronym)</option><option value="bad_number">Worker bad at words that contain numbers</option><option value="bad_punctuation">Worker bad at words that contain punctuations</option><option value="cant_tell">Can't tell</option><option value="others">Others (please write below)</option> </select><textarea class="form-control" cols="120" name="explain3" rows="1"></textarea></fieldset>
+
+<fieldset><label>Which of the following words did worker number ${worker} miss?</label>
+
+<div class="radio"><label><input name="q4" required="" value="0" type="radio">${w40}</label></div>
+
+<div class="radio"><label><input name="q4" required="" value="1" type="radio">${w41}</label></div>
+
+<div class="radio"><label><input name="q4" required="" value="2" type="radio">Can't tell.</label></div>
+
+<p><strong>Explain (required):</strong></p>
+<select class="form-control" name="select4" required=""><option selected="selected" value="">- select one -</option><option value="good_long">Worker good at long sentences</option><option value="good_acro">Worker good at all-uppercase(acronym)</option><option value="good_number">Worker good at words that contain numbers</option><option value="good_punctuation">Worker good at words that contain punctuation</option><option value="bad_long">Worker bad at long sentences</option><option value="bad_acronym">Worker bad at all-uppercase(acronym)</option><option value="bad_number">Worker bad at words that contain numbers</option><option value="bad_punctuation">Worker bad at words that contain punctuations</option><option value="cant_tell">Can't tell</option><option value="others">Others (please write below)</option> </select><textarea class="form-control" cols="120" name="explain4" rows="1"></textarea></fieldset>
+
+<center>
+<p><strong>Thanks for working for us. Do you have any comment?</strong></p>
+</center>
+
+<p><textarea class="form-control" cols="120" name="user_feedback" rows="5"></textarea></p>
+</div>
+<style type="text/css">fieldset { padding: 10px; background:#fbfbfb; border-radius:5px; margin-bottom:5px; }
+</style>
+<p>&nbsp;</p>
+<p class="text-center"><input id="submitButton" class="btn btn-primary" value="Submit" type="submit"></p></form><script language="Javascript">turkSetAssignmentID();</script></body></html>
