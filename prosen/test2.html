@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Test</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+  <script src="https://use.fontawesome.com/6f35c618a4.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <div> Model Prediction:</div>
+
+    <div class="progress" id="progress">
+        <div id = "pred_false" class="progress-bar progress-bar-danger" role="progressbar" style="width:50%">
+            <p> False </p>
+        </div>
+        <div id = "pred_true" class="progress-bar progress-bar-success" role="progressbar" style="width:50%">
+            <p> True </p>
+        </div>
+    </div>
+
+    <br>
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th class="col-md-1" > Feature </th>
+                <th class="col-md-1" > Parameter Posterior   </th>
+                <th class="col-md-1" > Control </th>
+
+            </tr>
+        </thead>
+
+
+        <tbody>
+            <tr>
+                <td>
+                    Feature 1
+                </td>
+                <td>
+                    <svg id = "d0" viewBox="-100 0 200 10">
+
+                    </svg>
+                    <input type="range" min="-1" max="1" step = "0.01" value="0.2" class="slider" id="s0">
+                </td>
+                <td>
+                    <button type="button" class="btn btn-default" id = "b0">Sample</button>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    Feature 2
+                </td>
+                <td>
+                    <svg id = "d1" viewBox="-100 0 200 10">
+
+                    </svg>
+                    <input type="range" min="-1" max="1" step = "0.01" value="0.6" class="slider" id="s1">
+                </td>
+                <td>
+                    <button type="button" class="btn btn-default" id = "b1">Sample</button>
+                </td>
+            </tr>
+
+
+        </tbody>
+
+    </table>
+
+
+<p> Your prediction:</p> 
+<form action="">
+  <input type="radio" name="pred" value="false" onclick="click_false()"> False<br>
+  <input type="radio" name="pred" value="true" onclick="click_true()"> True<br>
+</form>
+
+<div id="info_point" style="display:none">
+    <br>
+    <span> If the true label is <span id=lab1> False</span>, you will get <span id=point1> 1</span> points. </span> 
+    <br>
+    <span> If the true label is <span id=lab2> True</span>, you will lose <span id=point2> 1</span> points. </span> 
+</div>
+
+
+
+
+</div>
+
+
+<script>
+
+function click_false(){
+    document.getElementById("info_point").style.display="block"
+    document.getElementById("lab1").innerHTML = "False";
+    document.getElementById("lab2").innerHTML = "True";
+    document.getElementById("point1").innerHTML = "10";
+    document.getElementById("point2").innerHTML = "1";
+}
+
+function click_true(){
+    document.getElementById("info_point").style.display="block"
+    document.getElementById("lab1").innerHTML = "True";
+    document.getElementById("lab2").innerHTML = "False";
+    document.getElementById("point1").innerHTML = "5";
+    document.getElementById("point2").innerHTML = "5";
+}
+
+
+function sigmoid(x) {
+    return 1.0 / (1.0 + Math.exp(-x))
+}
+
+class Prediction {
+    // pos_samples: (array of length dim) posterior samples for each features
+    constructor(features, params, pos_samples) {
+        this.features = features;
+        this.dim = features.length;
+        this.params = params;
+        this.pred_false = 50;
+        this.pred_true = 50;
+        this.pos_samples = pos_samples;
+    }
+
+    // listen for slider change
+    set_param_listener() {
+        this.list_sliders = new Array(this.dim);
+        var i = 0;
+        var self = this;
+        for (i = 0; i < this.dim; i++){
+            var s = document.getElementById("s" + i);
+            this.list_sliders[i] = s;
+            s.i = i;
+            s.addEventListener("input", function() {
+                console.log(this.value);
+                self.params[this.i] = this.value;
+                self.eval_pred();
+                self.update_pred();
+            })
+        }
+    }
+
+    // generate sample from the posterior for feature i
+    do_pos_sample(i) {
+        var new_val = this.pos_samples[i].generate();
+        this.params[i] = new_val;
+        this.list_sliders[i].value = new_val;
+        this.eval_pred();
+        this.update_pred();
+    }
+
+    set_sample_btn_listener() {
+        var i = 0;
+        var self = this;
+        for (i = 0; i < this.dim; i++){
+            var b = document.getElementById("b" + i);
+            b.i = i;
+            b.addEventListener("mousedown", function() {
+                console.log("mousedown" + this.i);
+                self.do_pos_sample(this.i);
+                var button_this = this;
+                this.repeat_interval = setInterval(function(){self.do_pos_sample(button_this.i);} , 400);
+            })
+            b.addEventListener("mouseup", function() {
+                clearInterval(this.repeat_interval);
+            })
+        }
+    }
+
+    update_pred() {
+        document.getElementById("pred_false").style = "width:" + this.pred_false + "%";
+        document.getElementById("pred_true").style = "width:" + this.pred_true + "%";
+    }
+
+    eval_pred() {
+        var a = 0;
+        var i = 0;
+        for (i = 0; i < this.dim; i++){
+            a += this.features[i] * this.params[i];
+        }
+
+        this.pred_true = 100 * sigmoid(a);
+        this.pred_false = 100 - this.pred_true;
+
+    }
+
+
+
+}
+
+
+class Samples {
+    constructor(samples) {
+        this.samples = samples;
+        this.n = this.samples.length;
+    }
+
+    generate(){
+        var i = Math.floor(Math.random() * this.n);
+        return this.samples[i];
+    }
+
+}
+
+
+sample0 = new Samples([0, 0.1, 0.2, 0.3, -0.1, -0.2])
+sample1 = new Samples([-1.0, -0.9, -0.8, -0.7, -0.6, -0.5, -0.4, -0.3, -0.2, -0.1, 0,
+    0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+list_samples = [sample0, sample1];
+p = new Prediction([1,2], [0.2, 0.6], list_samples);
+p.set_param_listener();
+p.set_sample_btn_listener();
+p.eval_pred();
+p.update_pred();
+
+for (i = 0; i < 2; i++){
+    d3.select("#d" + i).selectAll("circle")
+        .data(list_samples[i].samples)
+        .enter()
+        .append("circle")
+        .attr("cx", function(d) {return 100*d;})
+        .attr("cy", "5")
+        .attr("fill", "black")
+        .attr("r", "1");
+    }
+//function(d) {return d;}
+
+/*
+var dataset = [ 5, 10, 15, 20, 25 ];
+var h = 50;
+d3.select("#d0")
+
+			svg.selectAll("circle")
+			    .data(dataset)
+			    .enter()
+			    .append("circle")
+                .attr("cx", function(d, i) {
+						return (i * 50) + 25;
+					})
+				   .attr("cy", h/2)
+				   .attr("r", function(d) {
+						return d;
+				   });
+
+*/
+</script>
+
+</body>
+</html>
